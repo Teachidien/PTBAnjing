@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,5 +45,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater(R.menu.action_menu, menu);
+        return true;
+    }
 
+    private void getMenuInflater(int actionMenu, Menu menu) {
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_notification:
+                Toast.makeText(getApplicationContext(), "ini adalah notif", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.menu_profile:
+                
+            
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
